@@ -88,7 +88,7 @@ public final class GreetingServiceGrpc {
     /**
      */
     public void greeting(com.example.grpc.GreetingServiceOuterClass.HelloRequest request,
-        io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.HelloResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.HelloResponse> responseObserver) throws InterruptedException {
       asyncUnimplementedUnaryCall(getGreetingMethod(), responseObserver);
     }
 
@@ -205,8 +205,12 @@ public final class GreetingServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_GREETING:
-          serviceImpl.greeting((com.example.grpc.GreetingServiceOuterClass.HelloRequest) request,
-              (io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.HelloResponse>) responseObserver);
+          try {
+            serviceImpl.greeting((com.example.grpc.GreetingServiceOuterClass.HelloRequest) request,
+                (io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.HelloResponse>) responseObserver);
+          } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+          }
           break;
         default:
           throw new AssertionError();
