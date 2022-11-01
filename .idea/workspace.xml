@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="407eaca7-7698-43d1-93b2-f8cec76d2935" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/CoffeeEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/json/CustomJSONb.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/template/CoffeeClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/proto/CoffeeService.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GreetingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CoffeeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/proto/GreetingService.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/protobuf/grpc-java/com/example/grpc/GreetingServiceGrpc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/CoffeeEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/CoffeeEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/json/CustomJSONb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/json/CustomJSON.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CoffeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CoffeeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/proto/CoffeeService.proto" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/proto/CoffeeService.proto" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

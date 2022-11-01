@@ -17,6 +17,26 @@ message CoffeeGetResponse {
   CustomJSON description = 3;
 }
 
+message CoffeePostRequest {
+  int32 id = 1;
+  string name = 2;
+  CustomJSON description = 3;
+}
+
+message CoffeePostResponse {
+  string id = 1;
+}
+
+message CoffeeDelRequest {
+  int32 id = 1;
+}
+
+message CoffeeDelResponse {
+  int32 retCode = 1;
+}
+
 service CoffeeService {
   rpc getCoffee(CoffeeGetRequest) returns (CoffeeGetResponse);
+  rpc addCoffee(CoffeePostRequest) returns (CoffeePostResponse);
+  rpc delCoffee(CoffeeDelRequest) returns (CoffeeDelResponse);
 }

@@ -2,7 +2,7 @@ package com.ntnv.gldva.json;
 
 import java.io.Serializable;
 
-public class CustomJSONb implements Serializable {
+public class CustomJSON implements Serializable {
     private String scoreSCA;
 
     private String grind;

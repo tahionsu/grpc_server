@@ -32,5 +32,45 @@ public class CoffeeServiceImpl extends CoffeeServiceGrpc.CoffeeServiceImplBase {
         responseObserver.onCompleted();
     }
 
+    @Override
+    public void addCoffee(CoffeeServiceOuterClass.CoffeePostRequest request,
+                          StreamObserver<CoffeeServiceOuterClass.CoffeePostResponse> responseObserver) {
+
+        CoffeeEntity coffeeForPost = new CoffeeEntity();
+        com.ntnv.gldva.json.CustomJSON json = new com.ntnv.gldva.json.CustomJSON();
+
+        coffeeForPost.setName(request.getName());
+
+        json.setScoreSCA(request.getDescription().getScoreSCA());
+        json.setGrind(request.getDescription().getGrind());
+
+        coffeeForPost.setDescription(json);
+
+        String retCode = CoffeeClient.postCoffee(coffeeForPost, "http://localhost:8080/coffee");
+
+        CoffeeServiceOuterClass.CoffeePostResponse response = CoffeeServiceOuterClass
+                .CoffeePostResponse
+                .newBuilder()
+                .setId(retCode)
+                .build();
+
+        responseObserver.onNext(response);
+        responseObserver.onCompleted();
+    }
+
+    @Override
+    public void delCoffee(CoffeeServiceOuterClass.CoffeeDelRequest request,
+                          StreamObserver<CoffeeServiceOuterClass.CoffeeDelResponse> responseObserver) {
+        Integer retCod = CoffeeClient.deleteCoffee(request.getId(), "http://localhost:8080/coffee");
+
+        CoffeeServiceOuterClass.CoffeeDelResponse responseDel = CoffeeServiceOuterClass
+                .CoffeeDelResponse
+                .newBuilder()
+                .setRetCode(retCod)
+                .build();
+
+        responseObserver.onNext(responseDel);
+        responseObserver.onCompleted();
+    }
 }
 

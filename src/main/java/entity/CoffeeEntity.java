@@ -14,7 +14,7 @@ public class CoffeeEntity {
 
     @Type(type = "CustomJsonType")
 
-    private com.ntnv.gldva.json.CustomJSONb description;
+    private com.ntnv.gldva.json.CustomJSON description;
 
     public CoffeeEntity() {
     }
@@ -41,11 +41,11 @@ public class CoffeeEntity {
         this.id = id;
     }
 
-    public com.ntnv.gldva.json.CustomJSONb getDescription() {
+    public com.ntnv.gldva.json.CustomJSON getDescription() {
         return description;
     }
 
-    public void setDescription(com.ntnv.gldva.json.CustomJSONb description) {
+    public void setDescription(com.ntnv.gldva.json.CustomJSON description) {
         this.description = description;
     }
 
