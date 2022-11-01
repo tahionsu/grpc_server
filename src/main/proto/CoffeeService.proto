@@ -1,0 +1,22 @@
+syntax = "proto3";
+package com.example.grpc;
+
+
+message CustomJSON {
+  string scoreSCA = 1;
+  string grind = 2;
+}
+
+message CoffeeGetRequest {
+  int32 id = 1;
+}
+
+message CoffeeGetResponse {
+  int32 id = 1;
+  string name = 2;
+  CustomJSON description = 3;
+}
+
+service CoffeeService {
+  rpc getCoffee(CoffeeGetRequest) returns (CoffeeGetResponse);
+}

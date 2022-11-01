@@ -7,8 +7,8 @@ import java.io.IOException;
 
 public class App {
     public static void main(String[] args) throws IOException, InterruptedException {
-        Server server = ServerBuilder.forPort(8080)
-                .addService(new GreetingServiceImpl())
+        Server server = ServerBuilder.forPort(8081)
+                .addService(new CoffeeServiceImpl())
                 .build();
 
         server.start();
@@ -17,4 +17,5 @@ public class App {
 
         server.awaitTermination();
     }
+
 }
