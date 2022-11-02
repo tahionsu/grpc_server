@@ -1,4 +1,4 @@
-package com.ntnv.gldva.json;
+package org.example.json;
 
 import java.io.Serializable;
 

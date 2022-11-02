@@ -2,9 +2,10 @@ package org.example;
 
 import com.example.grpc.CoffeeServiceGrpc;
 import com.example.grpc.CoffeeServiceOuterClass;
-import entity.CoffeeEntity;
+import org.example.entity.CoffeeEntity;
 import io.grpc.stub.StreamObserver;
-import template.CoffeeClient;
+import org.example.template.CoffeeClient;
+import org.example.json.CustomJSON;
 
 
 public class CoffeeServiceImpl extends CoffeeServiceGrpc.CoffeeServiceImplBase {
@@ -13,23 +14,27 @@ public class CoffeeServiceImpl extends CoffeeServiceGrpc.CoffeeServiceImplBase {
     public void getCoffee(CoffeeServiceOuterClass.CoffeeGetRequest request,
                           StreamObserver<CoffeeServiceOuterClass.CoffeeGetResponse> responseObserver) {
 
+        CoffeeServiceOuterClass.CoffeeGetResponse response = null;
         CoffeeEntity coffee = CoffeeClient.getCoffee(request.getId(), "http://localhost:8080/coffee");
 
-        CoffeeServiceOuterClass.CustomJSON description = new CoffeeServiceOuterClass.CustomJSON(
-                coffee.getDescription().getScoreSCA(),
-                coffee.getDescription().getGrind()
-        );
+        if (coffee != null) {
+            CoffeeServiceOuterClass.CustomJSON description = new CoffeeServiceOuterClass.CustomJSON(
+                    coffee.getDescription().getScoreSCA(),
+                    coffee.getDescription().getGrind()
+            );
 
-        CoffeeServiceOuterClass.CoffeeGetResponse response = CoffeeServiceOuterClass
-                .CoffeeGetResponse
-                .newBuilder()
-                .setId(coffee.getId())
-                .setName(coffee.getName())
-                .setDescription(description)
-                .build();
+            response = CoffeeServiceOuterClass
+                    .CoffeeGetResponse
+                    .newBuilder()
+                    .setId(coffee.getId())
+                    .setName(coffee.getName())
+                    .setDescription(description)
+                    .build();
 
+        }
         responseObserver.onNext(response);
         responseObserver.onCompleted();
+
     }
 
     @Override
@@ -37,7 +42,7 @@ public class CoffeeServiceImpl extends CoffeeServiceGrpc.CoffeeServiceImplBase {
                           StreamObserver<CoffeeServiceOuterClass.CoffeePostResponse> responseObserver) {
 
         CoffeeEntity coffeeForPost = new CoffeeEntity();
-        com.ntnv.gldva.json.CustomJSON json = new com.ntnv.gldva.json.CustomJSON();
+        CustomJSON json = new CustomJSON();
 
         coffeeForPost.setName(request.getName());
 

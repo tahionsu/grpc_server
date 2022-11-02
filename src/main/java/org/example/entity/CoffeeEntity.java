@@ -1,8 +1,11 @@
-package entity;
+package org.example.entity;
 
 import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.util.Objects;
+
+import org.example.json.CustomJSON;
 
 @Entity
 @Table(name = "coffee")
@@ -14,7 +17,7 @@ public class CoffeeEntity {
 
     @Type(type = "CustomJsonType")
 
-    private com.ntnv.gldva.json.CustomJSON description;
+    private CustomJSON description;
 
     public CoffeeEntity() {
     }
@@ -41,11 +44,11 @@ public class CoffeeEntity {
         this.id = id;
     }
 
-    public com.ntnv.gldva.json.CustomJSON getDescription() {
+    public CustomJSON getDescription() {
         return description;
     }
 
-    public void setDescription(com.ntnv.gldva.json.CustomJSON description) {
+    public void setDescription(CustomJSON description) {
         this.description = description;
     }
 
