@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="407eaca7-7698-43d1-93b2-f8cec76d2935" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CoffeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CoffeeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entity/CoffeeEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entity/CoffeeEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/json/CustomJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/json/CustomJSON.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/template/CoffeeClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/template/CoffeeClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,11 +111,19 @@
       <option name="project" value="LOCAL" />
       <updated>1667291151439</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add exceptions">
+      <created>1667360723154</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1667360723154</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add post &amp; delete coffee" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add post &amp; delete coffee" />
+    <MESSAGE value="Add exceptions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add exceptions" />
   </component>
 </project>

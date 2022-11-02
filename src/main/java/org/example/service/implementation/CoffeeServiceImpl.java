@@ -1,4 +1,4 @@
-package org.example;
+package org.example.service.implementation;
 
 import com.example.grpc.CoffeeServiceGrpc;
 import com.example.grpc.CoffeeServiceOuterClass;
