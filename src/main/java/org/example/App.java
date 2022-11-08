@@ -1,12 +1,8 @@
 package org.example;
 
-import io.grpc.Server;
-import io.grpc.ServerBuilder;
 import org.example.server.ServerBean;
-import org.example.service.implementation.CoffeeServiceImpl;
-import org.example.template.CoffeeClient;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.web.client.RestTemplate;
+
 
 import java.io.IOException;
 

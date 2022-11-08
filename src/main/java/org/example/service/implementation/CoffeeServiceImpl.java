@@ -2,6 +2,7 @@ package org.example.service.implementation;
 
 import com.example.grpc.CoffeeServiceGrpc;
 import com.example.grpc.CoffeeServiceOuterClass;
+import com.google.protobuf.InvalidProtocolBufferException;
 import org.example.entity.CoffeeEntity;
 import io.grpc.stub.StreamObserver;
 import org.example.template.CoffeeClient;
@@ -18,7 +19,7 @@ public class CoffeeServiceImpl extends CoffeeServiceGrpc.CoffeeServiceImplBase {
 
     @Override
     public void getCoffee(CoffeeServiceOuterClass.CoffeeGetRequest request,
-                          StreamObserver<CoffeeServiceOuterClass.CoffeeGetResponse> responseObserver) {
+                          StreamObserver<CoffeeServiceOuterClass.CoffeeGetResponse> responseObserver) throws InvalidProtocolBufferException {
 
         CoffeeServiceOuterClass.CoffeeGetResponse response = null;
         CoffeeEntity coffee = coffeeClient.getCoffee(request.getId(), "http://localhost:8080/coffee");

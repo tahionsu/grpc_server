@@ -5,12 +5,12 @@ import io.grpc.ServerBuilder;
 import org.example.service.implementation.CoffeeServiceImpl;
 import org.example.template.CoffeeClient;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
 
-@Configuration
+@Component
 public class ServerBean {
 
     private RestTemplate restTemplate;
@@ -25,12 +25,11 @@ public class ServerBean {
                 .build();
     }
 
-    @Bean
     public void start() throws IOException {
         this.server.start();
     }
 
-    @Bean
+
     public void await() throws InterruptedException {
         this.server.awaitTermination();
         ;
