@@ -32,7 +32,6 @@ public class ServerBean {
 
     public void await() throws InterruptedException {
         this.server.awaitTermination();
-        ;
     }
 
 }
