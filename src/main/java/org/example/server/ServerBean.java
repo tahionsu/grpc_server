@@ -26,9 +26,13 @@ public class ServerBean {
     }
 
     @Bean
-    public void start() throws IOException, InterruptedException {
+    public void start() throws IOException {
         this.server.start();
-        this.server.awaitTermination();
+    }
+
+    @Bean
+    public void await() throws InterruptedException {
+        this.server.awaitTermination();;
     }
 
 }

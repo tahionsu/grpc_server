@@ -19,7 +19,7 @@ public class App {
         ServerBean serverBean = ctx.getBean(ServerBean.class);
 
         serverBean.start();
-        System.out.println("Server started");
+        serverBean.await();
     }
 
 }
