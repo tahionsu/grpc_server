@@ -12,6 +12,7 @@ import java.io.IOException;
 
 public class App {
     public static void main(String[] args) throws IOException, InterruptedException {
+
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
         ctx.register(ServerBean.class);
         ctx.refresh();
