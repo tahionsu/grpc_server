@@ -10,12 +10,18 @@ import org.example.json.CustomJSON;
 
 public class CoffeeServiceImpl extends CoffeeServiceGrpc.CoffeeServiceImplBase {
 
+    CoffeeClient coffeeClient;
+
+    public CoffeeServiceImpl(CoffeeClient coffeeClient) {
+        this.coffeeClient = coffeeClient;
+    }
+
     @Override
     public void getCoffee(CoffeeServiceOuterClass.CoffeeGetRequest request,
                           StreamObserver<CoffeeServiceOuterClass.CoffeeGetResponse> responseObserver) {
 
         CoffeeServiceOuterClass.CoffeeGetResponse response = null;
-        CoffeeEntity coffee = CoffeeClient.getCoffee(request.getId(), "http://localhost:8080/coffee");
+        CoffeeEntity coffee = coffeeClient.getCoffee(request.getId(), "http://localhost:8080/coffee");
 
         if (coffee != null) {
             CoffeeServiceOuterClass.CustomJSON description = new CoffeeServiceOuterClass.CustomJSON(
@@ -51,7 +57,7 @@ public class CoffeeServiceImpl extends CoffeeServiceGrpc.CoffeeServiceImplBase {
 
         coffeeForPost.setDescription(json);
 
-        String retCode = CoffeeClient.postCoffee(coffeeForPost, "http://localhost:8080/coffee");
+        String retCode = coffeeClient.postCoffee(coffeeForPost, "http://localhost:8080/coffee");
 
         CoffeeServiceOuterClass.CoffeePostResponse response = CoffeeServiceOuterClass
                 .CoffeePostResponse
@@ -66,7 +72,8 @@ public class CoffeeServiceImpl extends CoffeeServiceGrpc.CoffeeServiceImplBase {
     @Override
     public void delCoffee(CoffeeServiceOuterClass.CoffeeDelRequest request,
                           StreamObserver<CoffeeServiceOuterClass.CoffeeDelResponse> responseObserver) {
-        Integer retCod = CoffeeClient.deleteCoffee(request.getId(), "http://localhost:8080/coffee");
+
+        Integer retCod = coffeeClient.deleteCoffee(request.getId(), "http://localhost:8080/coffee");
 
         CoffeeServiceOuterClass.CoffeeDelResponse responseDel = CoffeeServiceOuterClass
                 .CoffeeDelResponse
